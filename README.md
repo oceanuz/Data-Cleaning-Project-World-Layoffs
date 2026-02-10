@@ -1,21 +1,9 @@
-MySQL Data Cleaning Project: World Layoffs
-Project Objective
-In this project, I implemented an end-to-end SQL cleaning process to make raw layoff data retrieved from Kaggle analyzable.
+Şirket Bazlı İşten Çıkarma ve Yatırım İlişkisi
 
-Actions Performed
-Staging: Working tables were created to preserve the raw data.
 
-Remove Duplicates: Duplicate records were detected and cleaned using the ROW_NUMBER() function.
+Zirvedeki Şirketler: İşten çıkarmalarda başı çeken ilk 3 dev: Amazon (18.000+), Google (12.000) ve Meta (11.000). (Microsoft 10.000 ile hemen arkalarında).
 
-Standardization: Spelling errors in industry names (Crypto, etc.) and country names were corrected. TRIM() and TRAILING were used.
+Yatırım Tezatlığı (Nakit vs. Kovulma): Meta 26 Milyar $ yatırım/nakit gücüne sahipken 11.000 kişiyi çıkardı. Salesforce ise çok daha düşük bir yatırım rakamıyla (65 Milyon $) benzer bir işten çıkarma (10.090 kişi) yaptı.
 
-Date Conversion: Dates of type TEXT were converted to actual DATE format using STR_TO_DATE.
-
-Handling Nulls: Missing data (Industry) was completed using the Self-Join method from other records of the same company.
-
-Data Removal: Rows and auxiliary columns that were worthless for analysis (containing null values) were deleted.
-
-Technologies Used
-MySQL Workbench
-SQL Window Functions 
-Data Imputation techniques
+İş Mantığı Çıkarımı: Yüksek yatırım almış olmak veya dev bir şirket olmak işten çıkarmalara karşı bir kalkan değildir; aksine, en büyük operasyonel küçülmeyi bu devler gerçekleştirmiştir.
+<img width="301" height="76" alt="Screenshot_3" src="https://github.com/user-attachments/assets/f7f93ee1-e6ac-43ad-a664-f84059ff57f8" />
