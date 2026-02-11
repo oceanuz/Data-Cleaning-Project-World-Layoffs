@@ -1,4 +1,4 @@
-# 📊 Dünya Çapında İşten Çıkarmalar: Veri Temizleme ve Keşifsel Veri Analizi (EDA) (SQL) 
+# 📊 Dünya Çapında İşten Çıkarmalar: Veri Temizleme ve Keşifsel Veri Analizi (EDA)
 
 Problem: 2020-2023 arası kontrolsüz işten çıkarmaların yarattığı veri kirliliği ve analiz ihtiyacı.
 
