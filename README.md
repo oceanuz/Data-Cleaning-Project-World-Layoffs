@@ -61,6 +61,7 @@ Analizlerin doğruluğunu sağlamak için ham veri seti üzerinde şu teknik iş
 * **Database:** MySQL
 * **Language:** SQL
 * **Techniques:** CTE's, Window Functions (ROW_NUMBER), Joins, Data Standardization, Date Formatting, Aggregations.
+* **PowerBI:**  Dynamic Slicers, Bubble Map, Time-Series Analysis, KPI Scorecards.
 
 ---
 
@@ -68,3 +69,4 @@ Analizlerin doğruluğunu sağlamak için ham veri seti üzerinde şu teknik iş
 * `data_cleaning.sql`: Ham veriyi temizlemek için kullanılan tüm sorgular.
 * `exploratory_analysis.sql`: Yukarıdaki analitik bulguları elde etmek için yazılan sorgular.
 * `Raw_Data.csv`: Analizde kullanılan dünya genelindeki işten çıkarmaları içeren ham veri seti.
+* *`WORLD LAYOFFS DASHBOARD.pbix`: Veri analizi ve görselleştirme için hazırlanan interaktif rapor.
