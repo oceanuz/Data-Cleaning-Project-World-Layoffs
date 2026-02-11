@@ -1,6 +1,14 @@
 # 📊 Dünya Çapında İşten Çıkarmalar: Veri Temizleme ve Keşifsel Veri Analizi (EDA) (SQL) 
 ![World Layoffs Dashboard](world_layoffs_dashboard.png)
+Gösterge Paneli Analizi
+Zirve Dönemi: Görselleştirmeler, işten çıkarmaların 2022 sonu ile 2023 başı arasında zirveye ulaştığını doğruluyor.
+
+En Çok Etkilenen Sektörler: Perakende ve Tüketici sektörleri en yüksek işten çıkarma hacmine sahip oldu.
+
+Coğrafi Merkez: İnteraktif haritada görüldüğü gibi, işten çıkarmaların büyük çoğunluğu ABD teknoloji merkezlerinde yoğunlaşmıştır.
+
 Bu proje, 2020-2023 yılları arasındaki küresel teknoloji işten çıkarmalarını içeren ham bir veri setinin **SQL** kullanılarak temizlenmesi ve analiz edilmesi sürecini kapsamaktadır. Proje, ham verinin analiz edilebilir hale getirilmesinden, stratejik iş çıkarımlarının yapılmasına kadar uçtan uca bir veri analitiği sürecidir.
+
 
 ---
 
