@@ -50,3 +50,4 @@ Analizlerin doğruluğunu sağlamak için ham veri seti üzerinde şu teknik iş
 ## 📂 Proje Dosyaları
 * `data_cleaning.sql`: Ham veriyi temizlemek için kullanılan tüm sorgular.
 * `exploratory_analysis.sql`: Yukarıdaki analitik bulguları elde etmek için yazılan sorgular.
+* `Raw_Data.csv`: Analizde kullanılan dünya genelindeki işten çıkarmaları içeren ham veri seti.
