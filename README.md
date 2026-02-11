@@ -1,4 +1,11 @@
 # 📊 Dünya Çapında İşten Çıkarmalar: Veri Temizleme ve Keşifsel Veri Analizi (EDA) (SQL) 
+
+Problem: 2020-2023 arası kontrolsüz işten çıkarmaların yarattığı veri kirliliği ve analiz ihtiyacı.
+
+Çözüm: SQL ile veri temizleme ve Power BI ile interaktif görselleştirme.
+
+Sonuç: Krizin zirve noktasının ve en çok etkilenen sektörlerin tespiti.
+
 ![World Layoffs Dashboard](world_layoffs_dashboard.png)
 Gösterge Paneli Analizi
 Zirve Dönemi: Görselleştirmeler, işten çıkarmaların 2022 sonu ile 2023 başı arasında zirveye ulaştığını doğruluyor.
@@ -69,4 +76,4 @@ Analizlerin doğruluğunu sağlamak için ham veri seti üzerinde şu teknik iş
 * `data_cleaning.sql`: Ham veriyi temizlemek için kullanılan tüm sorgular.
 * `exploratory_analysis.sql`: Yukarıdaki analitik bulguları elde etmek için yazılan sorgular.
 * `Raw_Data.csv`: Analizde kullanılan dünya genelindeki işten çıkarmaları içeren ham veri seti.
-* *`WORLD LAYOFFS DASHBOARD.pbix`: Veri analizi ve görselleştirme için hazırlanan interaktif rapor.
+* `WORLD LAYOFFS DASHBOARD.pbix`: Veri analizi ve görselleştirme için hazırlanan interaktif rapor.
