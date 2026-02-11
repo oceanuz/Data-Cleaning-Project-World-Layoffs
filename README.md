@@ -4,7 +4,7 @@ Problem: 2020-2023 arası kontrolsüz işten çıkarmaların yarattığı veri k
 
 Çözüm: SQL ile veri temizleme ve Power BI ile interaktif görselleştirme.
 
-Sonuç: Krizin zirve noktasının ve en çok etkilenen sektörlerin tespiti.
+Sonuç: Krizin zirve noktasının ve en çok etkilenen sektörlerin, ülkelerin ve markaların tespiti.
 
 ![World Layoffs Dashboard](world_layoffs_dashboard.png)
 Gösterge Paneli Analizi
