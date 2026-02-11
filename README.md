@@ -1,25 +1,52 @@
-Şirket Bazlı İşten Çıkarma ve Yatırım İlişkisi
+# 📊 World Layoffs: Data Cleaning & Exploratory Data Analysis (SQL)
 
-Zirvedeki Şirketler: Corona virüsünden dolayı işten çıkarmalarda başı çeken ilk 3 dev: Amazon (18.000+), Google (12.000) ve Meta (11.000). (Microsoft 10.000 ile hemen arkalarında).
+Bu proje, 2020-2023 yılları arasındaki küresel teknoloji işten çıkarmalarını içeren ham bir veri setinin **SQL** kullanılarak temizlenmesi ve analiz edilmesi sürecini kapsamaktadır. Proje, ham verinin analiz edilebilir hale getirilmesinden, stratejik iş çıkarımlarının yapılmasına kadar uçtan uca bir veri analitiği sürecidir.
 
-Yatırım Tezatlığı (Nakit vs. Kovulma): Meta 26 Milyar $ yatırım/nakit gücüne sahipken 11.000 kişiyi çıkardı. Salesforce ise çok daha düşük bir yatırım rakamıyla (65 Milyon $) benzer bir işten çıkarma (10.090 kişi) yaptı.
+---
 
-İş Mantığı Çıkarımı: Yüksek yatırım almış olmak veya dev bir şirket olmak işten çıkarmalara karşı bir kalkan değildir; aksine, en büyük operasyonel küçülmeyi bu devler gerçekleştirmiştir.
+## 🛠️ 1. Veri Temizleme Süreci (Data Cleaning)
 
+Analizlerin doğruluğunu sağlamak için ham veri seti üzerinde şu teknik işlemler uygulanmıştır:
 
-<img width="301" height="76" alt="Screenshot_3" src="https://github.com/user-attachments/assets/f7f93ee1-e6ac-43ad-a664-f84059ff57f8" />
+* **Mükerrer Kayıtlar (Duplicates):** `ROW_NUMBER()` ve `CTE` kullanılarak tamamen aynı olan satırlar tespit edilmiş ve mükerrer veriler temizlenmiştir.
+* **Standardizasyon:** * `Industry` sütunundaki "Crypto" ve "Crypto Currency" gibi farklı girilmiş veriler tek bir başlık altında birleştirilmiştir. * Ülke isimlerindeki yazım hataları ve gereksiz noktalama işaretleri düzeltilmiştir.
+* **Zaman Verisi Düzenleme:** Metin formatındaki tarih verileri, zaman serisi analizine uygun hale getirilmesi için `STR_TO_DATE` ile `Date` formatına dönüştürülmüştür.
+* **Null Değer Yönetimi:** Toplam işten çıkarma ve oran sütunlarındaki eksik veriler (NULL) incelenmiş; analizi saptırabilecek anlamsız kayıtlar temizlenmiştir.
 
+---
 
+## 📈 2. Temel Bulgular ve Analitik Çıkarımlar
 
-Zaman Serisi (Krizin Zirvesi Ne Zamandı?)
+### A. Şirket ve Yatırım İlişkisi
+* **Devlerin Küçülmesi:** İşten çıkarmalarda başı çeken ilk 3 dev: **Amazon (18.000+), Google (12.000) ve Meta (11.000)** olmuştur.
+* **Yatırım Tezatlığı:** Meta 26 Milyar $nakit gücüne rağmen 11.000 kişiyi çıkarırken, Salesforce çok daha düşük bir yatırımla (65 Milyon$) benzer seviyede (10.090) işten çıkarma yapmıştır.
+* **Çıkarım:** Yüksek yatırım almış olmak veya dev bir şirket olmak işten çıkarmalara karşı bir kalkan değildir; aksine en büyük operasyonel daralmayı bu devler gerçekleştirmiştir.
 
-Zirve Tarihi: Ocak 2023 (2023-01).
+### B. Zaman Serisi ve Krizin Zirvesi
+* **Rekor Seviye:** Krizin zirve noktası **Ocak 2023** tarihinde **84.714** işten çıkarma ile görülmüştür.
+* **Analiz:** 2020-2021 dönemindeki düşük sayılar, pandeminin yarattığı yapay büyüme ve aşırı istihdamın sonucudur. Ocak 2023 zirvesi, bu kontrolsüz büyümenin ekonomik daralma ile dengelenme sürecidir.
 
-Zirve Rakamı: 84.714 kişi.
+### C. Sektörel Darbe
+* **En Çok Etkilenenler:** **Consumer** ve **Retail** sektörleri toplamda **88.000'den fazla** kayıpla krizden en ağır etkilenen alanlar olmuştur. Bu durum, küresel daralmanın doğrudan tüketici harcamalarını vurduğunu kanıtlar.
+* **Crypto Sektörü:** Veri temizleme aşamasında standardize edilen veriler sayesinde, bu sektördeki gerçek kaybın (10.693 kişi) net raporlanması sağlanmıştır.
 
-Kritik Kırılma: Kasım 2022'de başlayan yükseliş, Ocak 2023'te tavan yapmış.
+### D. Coğrafi Dağılım
+* **Merkez Üssü:** İşten çıkarmaların merkezi **256.000'den fazla** kayıpla açık ara **ABD**'dir. 
+* **Domino Etkisi:** ABD'yi Hindistan ve Avrupa (Hollanda, İsveç) pazarlarının takip etmesi, krizin küresel teknoloji merkezleri arasında yayıldığını belgelemektedir.
 
-Analiz: 2020 ve 2021'deki düşük işten çıkarma sayıları, pandemi dönemindeki dijital talep artışının yarattığı geçici istihdam artışından kaynaklanmaktadır. 
-Ocak 2023 zirvesi, bu kontrolsüz istihdamın ekonomik daralma (faiz artışları, talep düşüşü) ile dengelenmesi sürecidir.
+### E. Şirket Aşaması (Stage) Analizi
+* **Hacim vs. Oran:** Sayısal olarak en büyük kaybı **Post-IPO** (Halka arz edilmiş) devler verirken; oransal olarak **Seed** aşamasındaki girişimler ekiplerinin ortalama **%70'ini** kaybetmiştir.
+* **Çıkarım:** Kriz devler için bir "maliyet optimizasyonu" iken, küçük girişimler için bir "hayatta kalma mücadelesine" dönüşmüştür.
 
-<img width="231" height="505" alt="Screenshot_2" src="https://github.com/user-attachments/assets/4f10be82-b805-41c3-a5d3-75b0d49cd9b4" />
+---
+
+## 💻 Kullanılan Teknolojiler ve Teknikler
+* **Database:** MySQL
+* **Language:** SQL
+* **Techniques:** CTE's, Window Functions (ROW_NUMBER), Joins, Data Standardization, Date Formatting, Aggregations.
+
+---
+
+## 📂 Proje Dosyaları
+* `data_cleaning.sql`: Ham veriyi temizlemek için kullanılan tüm sorgular.
+* `exploratory_analysis.sql`: Yukarıdaki analitik bulguları elde etmek için yazılan sorgular.
